@@ -37,7 +37,7 @@ def test_get_all_posts(posts_client):
 
         first_post = response_json[0]
 
-    with allure.step("Прикрипление отчета"):
+    with allure.step("Прикрепление отчета"):
         pretty_json = json.dumps(first_post, indent=4, ensure_ascii=False)
         allure.attach(
             pretty_json,
@@ -79,7 +79,7 @@ def test_create_post(posts_client):
         assert post_data.body == body, f"Ожидался body '{body}', но пришел '{post_data.body}'"
         assert post_data.user_id == user_id, f"Ожидался user_id '{user_id}', но пришел '{post_data.user_id}'"
 
-    with allure.step("Прикрипление отчета"):
+    with allure.step("Прикрепление отчета"):
         pretty_json = json.dumps(response_json, indent=4, ensure_ascii=False)
         allure.attach(
             pretty_json,
@@ -117,7 +117,7 @@ def test_get_post_by_id(posts_client):
         assert get_data.body != "", f"Ожидалось, что body будет не пустым, но body вернулось пустое"
         assert  get_data.user_id is not None, f"Ожидалось, что userId будет не пустым, но userId вернулось пустое"
 
-    with allure.step("Прикрипление отчета"):
+    with allure.step("Прикрепление отчета"):
         pretty_json = json.dumps(response_json, indent=4, ensure_ascii=False)
         allure.attach(
             pretty_json,
